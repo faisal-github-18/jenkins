@@ -3,7 +3,11 @@ node {
       stage('Clone repository') {               
              
             checkout scm    
-      }     
+      } 
+      environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
+	}
+
       stage('Build image') {         
        
             app = docker.build("1818181818/test-18")    
