@@ -5,7 +5,7 @@ node {
             checkout scm    
       } 
       environment {
-		DOCKERHUB_CREDENTIALS=credentials('test-18')
+		DOCKERHUB_CREDENTIALS=credentials('av21aman')
 	}
 
       stage('Build image') {         
@@ -14,7 +14,7 @@ node {
        }     
       
       stage('Push image') {
-docker.withRegistry('https://registry.hub.docker.com', 'test-18') {            
+docker.withRegistry('https://registry.hub.docker.com', 'av21aman') {            
        app.push("${env.BUILD_NUMBER}")            
        app.push("latest")        
               }    
